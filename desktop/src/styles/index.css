@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #202225;
+  color: #dcddde;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*::selection {
+  color: #5865f2 !important;
+  background: rgba(220, 221, 222, 0.22) !important;
+}
+
+*::-moz-selection {
+  color: #5865f2 !important;
+  background: rgba(220, 221, 222, 0.22) !important;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f3136;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202225;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #36393f;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-discord-darkest;
+  }
+  
+  .btn-primary {
+    @apply bg-discord-blurple text-white hover:bg-opacity-80 focus:ring-discord-blurple;
+  }
+  
+  .btn-secondary {
+    @apply bg-discord-darker text-discord-text hover:bg-discord-dark focus:ring-discord-muted;
+  }
+  
+  .btn-danger {
+    @apply bg-discord-red text-white hover:bg-opacity-80 focus:ring-discord-red;
+  }
+  
+  .btn-success {
+    @apply bg-discord-green text-white hover:bg-opacity-80 focus:ring-discord-green;
+  }
+  
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium cursor-pointer transition-all duration-150;
+  }
+  
+  .chip-selected {
+    @apply ring-2 ring-discord-blurple;
+  }
+  
+  .chip-urgent {
+    @apply bg-discord-red bg-opacity-30 text-red-300 border border-discord-red hover:bg-opacity-40;
+  }
+  
+  .chip-follow-up {
+    @apply bg-discord-yellow bg-opacity-20 text-discord-yellow hover:bg-opacity-30;
+  }
+  
+  .chip-read-later {
+    @apply bg-discord-green bg-opacity-20 text-discord-green hover:bg-opacity-30;
+  }
+  
+  .chip-none {
+    @apply bg-discord-muted bg-opacity-20 text-discord-muted hover:bg-opacity-30;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 bg-discord-darkest border border-discord-darker rounded text-discord-text placeholder-discord-muted focus:outline-none focus:border-discord-blurple transition-colors;
+  }
+  
+  .card {
+    @apply bg-discord-darker rounded-lg p-4 border border-discord-dark;
+  }
+}
